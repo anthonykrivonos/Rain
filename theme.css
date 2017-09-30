@@ -1,0 +1,135 @@
+/*
+      Theming
+*/
+
+/* Fonts */
+
+.title {
+      font-family: 'Playfair Display', serif !important;
+}
+.subtitle {
+      font-family: 'Playfair Display', serif !important;
+      text-transform: uppercase !important;
+      font-weight: 500 !important;
+}
+.copy {
+      font-family: 'Source Sans Pro', sans-serif !important;
+}
+
+/* Colors */
+
+.orange {
+      color: #E0544C !important;
+}
+.swamp {
+      color: #99CD91 !important;
+}
+.sky {
+      color: #6FC5C1 !important;
+}
+.torquoise {
+      color: #41A09B !important;
+}
+.midnight {
+      color: #2F3845 !important;
+}
+
+/* Unselectable */
+.unselectable {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      cursor: default;
+}
+
+/*
+      Tag Styling
+*/
+
+body {
+      -webkit-app-region: drag;
+      background: none;
+      overflow: hidden !important;
+}
+div {
+      background: none !important;
+}
+
+/*
+      Bootstrap Component Styling
+*/
+
+/* Container */
+
+.container {
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+}
+.row {
+      display: table;
+      width: 100%;
+}
+.col {
+      display: table-cell;
+      vertical-align: middle;
+}
+
+/* Header */
+
+.breadcrumb {
+      height: 35px;
+      padding-top: 5px;
+      padding-left: 22px;
+      background: none;
+      margin-bottom: 0px;
+}
+.breadcrumb-item {
+      color: #2F3845 !important;
+      cursor: default;
+}
+.breadcrumb-item.active {
+      color: #6FC5C1 !important;
+}
+
+/* Main */
+.card {
+      border-radius: 0 !important;
+      border-left: 0 !important;
+      border-right: 0 !important;
+      border-bottom: 0 !important;
+      border-color: gray;
+}
+.card-block {
+      padding-top: 12px;
+      padding-bottom: 12px;
+}
+.card-header {
+      font-size: 20pt;
+      padding-top: 3px;
+      padding-bottom: 3px;
+      border-color: gray;
+}
+.card-temp {
+      font-size: 50pt;
+}
+.card-title {
+      font-size: 14pt;
+}
+.weather-icon {
+      width: 150px;
+      height: 150px;
+}
+.loading {
+      width: 20px;
+      height: 20px;
+      margin-left: 20px;
+}
+.btn {
+      background-color: #E0544C !important;
+      border: none !important;
+      color: white !important;
+      letter-spacing: 1px;
+}

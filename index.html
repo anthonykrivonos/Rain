@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+      <head>
+            <meta charset="UTF-8">
+            <title>Rain</title>
+            <!-- Bootstrap Linking -->
+            <script
+                  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+                  crossorigin="anonymous">
+            </script>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+            <!-- Google Font Linking -->
+            <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,700i|Source+Sans+Pro" rel="stylesheet">
+            <!-- Custom Style Linking -->
+            <link href="theme.css" rel="stylesheet" />
+      </head>
+      <body class="midnight">
+            <div class="container">
+                  <nav class="breadcrumb copy unselectable">
+                        <span class="breadcrumb-item title">Current Location</span>
+                        <span class="breadcrumb-item title location">New York, NY</span>
+                        <span class="breadcrumb-item title active"><span class="lat"></span>, <span class="long"></span></span>
+                  </nav>
+                  <div class="card">
+                        <div class="unselectable card-header title">
+                              Rain
+                        </div>
+                        <div class="card-block">
+                              <div class="row">
+                                    <div class="col col-9">
+                                          <h2 class="card-temp subtitle unselectable curTemp">__</h4>
+                                          <h4 class="card-title subtitle unselectable type"></h4>
+                                          <p class="description card-text unselectable">
+                                                Wind speed: <span class="windSpd">__</span>km/h</br>
+                                                Humidity: <span class="humidity">__</span>%</br>
+                                                Visibility: <span class="visibility">__</span>%</br>
+                                                Predictability: <span class="predictability">__</span>%</br>
+                                          </p>
+                                          <img class="loading" src="http://v6.player.abacast.net/assets/images/loading.gif"/>
+                                          <button onclick="renderer.getWeather()" href="#" class="btn subtitle unselectable">Reload</button>
+                                    </div>
+                                    <div class="col col-3 unselectable">
+                                          <img ondragstart="return false" class="weather-icon icon"/>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+            <script>
+                  const renderer = require('./renderer.js');
+                  renderer.getWeather();
+            </script>
+      </body>
+</html>

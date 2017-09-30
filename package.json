@@ -1,0 +1,29 @@
+{
+  "name": "rain",
+  "version": "1.0.0",
+  "description": "A smarter weather app powered by Electron.",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anthonykrivonos/Rain.git"
+  },
+  "author": "Anthony Krivonos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anthonykrivonos/Rain/issues"
+  },
+  "homepage": "https://github.com/anthonykrivonos/Rain#readme",
+  "devDependencies": {
+    "electron": "1.7.8"
+  },
+  "dependencies": {
+    "electron-reload": "^1.2.2",
+    "iplocation": "^5.0.0",
+    "public-ip": "^2.3.5",
+    "request": "^2.83.0"
+  }
+}
