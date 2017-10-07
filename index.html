@@ -30,20 +30,29 @@
                         <div class="card-block">
                               <div class="row">
                                     <div class="col col-9">
-                                          <h2 class="card-temp subtitle unselectable curTemp">__</h4>
+                                          <h2 onclick="renderer.plotAdjacent(null, 'curTemp')" class="card-temp subtitle unselectable curTemp clickable">__</h4>
                                           <h4 class="card-title subtitle unselectable type"></h4>
                                           <h4 class="card-title card-text unselectable"><span class="maxTemp"></span> / <span class="minTemp"></span></h4>
                                           <p class="description card-text unselectable">
-                                                Wind speed: <span class="windSpd">__</span>km/h</br>
-                                                Humidity: <span class="humidity">__</span>%</br>
-                                                Visibility: <span class="visibility">__</span>%</br>
-                                                Predictability: <span class="predictability">__</span>%</br>
+                                                <span onclick="renderer.plotAdjacent(null, 'windSpd')" class="clickable anchor sky">Wind speed:</span> <span class="windSpd">__</span> mph</br>
+                                                <span onclick="renderer.plotAdjacent(null, 'humidity')" class="clickable anchor sky">Humidity:</span> <span class="humidity">__</span>%</br>
+                                                <span onclick="renderer.plotAdjacent(null, 'visibility')" class="clickable anchor sky">Visibility:</span> <span class="visibility">__</span> miles</br>
+                                                <span onclick="renderer.plotAdjacent(null, 'predictability')" class="clickable anchor sky">Predictability:</span> <span class="predictability">__</span>%</br>
+                                                <span onclick="renderer.plotAdjacent(null, 'pressure')" class="clickable anchor sky">Pressure:</span> <span class="pressure">__</span> mbar</br>
                                           </p>
                                           <img class="loading" src="http://v6.player.abacast.net/assets/images/loading.gif"/>
                                           <button onclick="renderer.getWeather()" href="#" class="btn subtitle unselectable">Reload</button>
                                     </div>
-                                    <div class="col col-3 unselectable">
-                                          <img ondragstart="return false" class="weather-icon icon"/>
+                                    <div class="col col-3 unselectable clickable">
+                                          <img onclick="renderer.toggleWeather()" ondragstart="return false" class="weather-icon icon"/>
+                                          <div onclick="renderer.toggleWeather()" class="chart chart2d">
+                                                <a href="https://plot.ly/~anthonykrivonos.fordham/0/?share_key=xDSVvCx8G8BA6Xh59Rsa8C" target="_blank" title="weather-bar" style="display: block; text-align: center;"><img src="https://plot.ly/~anthonykrivonos.fordham/0.png?share_key=xDSVvCx8G8BA6Xh59Rsa8C" alt="weather-bar" style="max-width: 20%;width: 80px;"  width="80" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+                                                <script data-plotly="anthonykrivonos.fordham:0" sharekey-plotly="xDSVvCx8G8BA6Xh59Rsa8C" src="https://plot.ly/embed.js" async></script>
+                                          </div>
+                                          <div onclick="renderer.toggleWeather()" class="chart chart3d">
+                                                <a href="https://plot.ly/~anthonykrivonos.fordham/2/?share_key=u0kF9pbH45ARPt0RaAISgj" target="_blank" title="weather-3d-scatter" style="display: block; text-align: center;"><img src="https://plot.ly/~anthonykrivonos.fordham/2.png?share_key=u0kF9pbH45ARPt0RaAISgj" alt="weather-3d-scatter" style="max-width: 20%;width: 80px;"  width="80" onerror="this.onerror=null;this.src='https://plot.ly/404.png';" /></a>
+                                                <script data-plotly="anthonykrivonos.fordham:2" sharekey-plotly="u0kF9pbH45ARPt0RaAISgj" src="https://plot.ly/embed.js" async></script>
+                                          </div>
                                     </div>
                               </div>
                         </div>
@@ -51,7 +60,9 @@
             </div>
             <script>
                   const renderer = require('./renderer.js');
-                  renderer.getWeather();
+                  renderer.getWeather((weather, lat, long) => {
+                        renderer.plotAdjacent(null, null, lat, long);
+                  });
             </script>
       </body>
 </html>

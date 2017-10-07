@@ -42,7 +42,7 @@ let getWeatherFromLatLong = (lat, long, success, failure) => {
       });
 };
 
-let api = (location, lat, long, timezone, type, minTemp, maxTemp, curTemp, windSpd, humidity, visibility, predictability, icon) => {
+let api = (location, lat, long, timezone, type, minTemp, maxTemp, curTemp, windSpd, humidity, pressure, visibility, predictability, icon) => {
       return {
             location,
             lat,
@@ -54,6 +54,7 @@ let api = (location, lat, long, timezone, type, minTemp, maxTemp, curTemp, windS
             curTemp,
             windSpd,
             humidity,
+            pressure,
             visibility,
             predictability,
             icon

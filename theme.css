@@ -34,7 +34,11 @@
       color: #2F3845 !important;
 }
 
-/* Unselectable */
+/* -ables */
+.clickable {
+      cursor: hand;
+      cursor: pointer;
+}
 .unselectable {
       -webkit-user-select: none;
       -moz-user-select: none;
@@ -118,6 +122,9 @@ div {
 .card-title {
       font-size: 14pt;
 }
+.card-text {
+      font-size: 10pt;
+}
 .weather-icon {
       width: 150px;
       height: 150px;
@@ -132,4 +139,14 @@ div {
       border: none !important;
       color: white !important;
       letter-spacing: 1px;
+}
+.chart {
+      width: 70vw !important;
+      max-width: 70vw !important;
+}
+.chart2d, .chart3d {
+      display: none;
+}
+.anchor {
+      font-style: italic;
 }

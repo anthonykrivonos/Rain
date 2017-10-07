@@ -1,24 +1,25 @@
-const electron = require('electron')
-const app = electron.app
-const BrowserWindow = electron.BrowserWindow
+const electron = require('electron');
+const app = electron.app;
+const BrowserWindow = electron.BrowserWindow;
+const Menu = electron.Menu;
+const MenuItem = electron.MenuItem;
 
-const path = require('path')
-const url = require('url')
+const path = require('path');
+const url = require('url');
 
 require('electron-reload')(__dirname, {
       electron: require('${__dirname}/../../node_modules/electron')
 });
 
-let mainWindow;
+let mainWindow, menu;
 
 function createWindow () {
       mainWindow = new BrowserWindow({
-            width: 400,
-            height: 400,
+            width: 700,
+            height: 500,
             center: true,
             resizable: false,
-            fullscreen: false,
-            vibrancy: "popover"
+            fullscreen: false
       })
 
       mainWindow.loadURL(url.format({
@@ -31,7 +32,42 @@ function createWindow () {
             mainWindow = null
       })
 
-      //mainWindow.openDevTools();
+      // mainWindow.openDevTools();
+
+      const template = [
+            {
+                  label: 'Edit',
+                  submenu: [
+                        {role: 'undo'},
+                        {role: 'redo'},
+                        {type: 'separator'},
+                        {role: 'cut'},
+                        {role: 'copy'},
+                        {role: 'paste'},
+                        {role: 'pasteandmatchstyle'},
+                        {role: 'delete'},
+                        {role: 'selectall'}
+                  ]
+            },
+            {
+                  label: 'View',
+                  submenu: [
+                        {role: 'reload'},
+                        {role: 'forcereload'},
+                        {role: 'toggledevtools'}
+                  ]
+            },
+            {
+                  role: 'window',
+                  submenu: [
+                        {role: 'minimize'},
+                        {role: 'close'}
+                  ]
+            }
+      ]
+
+      const menu = Menu.buildFromTemplate(template)
+      Menu.setApplicationMenu(menu)
 }
 
 app.on('ready', createWindow)
