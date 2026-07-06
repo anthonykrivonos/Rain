@@ -18,13 +18,13 @@
   },
   "homepage": "https://github.com/anthonykrivonos/Rain#readme",
   "devDependencies": {
-    "electron": "1.7.8"
+    "electron": "43.0.0"
   },
   "dependencies": {
-    "electron-reload": "^1.2.2",
+    "electron-reload": "^1.5.0",
     "iplocation": "^5.0.0",
     "plotly": "^1.0.6",
-    "public-ip": "^2.3.5",
-    "request": "^2.83.0"
+    "public-ip": "^8.0.0",
+    "request": "^2.88.2"
   }
 }
